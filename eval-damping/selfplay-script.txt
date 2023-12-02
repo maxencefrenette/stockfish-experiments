@@ -1,0 +1,9 @@
+# This will run for a while, stop it when there is enough data
+# Run in git bash
+
+cutechess-cli.exe -repeat -rounds 10000 -games 1 -tournament gauntlet \
+                  -resign movecount=3 score=600 -draw movenumber=34 movecount=8 score=20 \
+                  -concurrency 8 -openings file=UHO_Lichess_4852_v1.epd format=epd order=random plies=16 \
+                  -engine name=sf1 cmd=stockfish_x86-64-avx2.exe \
+                  -engine name=sf2 cmd=stockfish_x86-64-avx2.exe \
+                  -ratinginterval 1 -each tc=60.0+0.6 proto=uci option.Threads=1
